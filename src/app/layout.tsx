@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { nunito } from "./font";
 
 export const metadata: Metadata = {
   title: "Neural",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <html lang="en">
+    <html lang="en" className={nunito.className}>
       <body>
         {children}
       </body>

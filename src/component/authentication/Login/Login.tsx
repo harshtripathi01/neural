@@ -2,9 +2,9 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <section className='w-screen h-screen'>
+    <section className='w-full h-screen'>
       {/* Logo section starts here */}
-      <div className='flex text-red-500 mt-3'>
+      <div className='flex text-red-500 mt-3 ml-8'>
         {/* Logo Image */}
         <div>
           logo
