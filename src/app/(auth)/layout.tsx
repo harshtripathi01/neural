@@ -1,3 +1,4 @@
+import AuthHeader from "@/component/authentication/AuthHeader/AuthHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     return (
         <html lang="en">
             <body>
+                <AuthHeader />
                 <main className="">
                     <div>
                         {children}

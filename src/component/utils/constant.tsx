@@ -1,0 +1,5 @@
+export const LOGO_URL = "/images/logo.svg"
+export const LEFT_URL = "/images/leftarrow.svg"
+export const GOOGLE_URL = "/images/login/google.svg"
+export const X_URL = "/images/login/x.svg"
+export const LINKDIEN_URL = "/images/login/linkdien.svg"

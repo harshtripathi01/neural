@@ -16,8 +16,9 @@ const config: Config = {
       },
       fontWeight: {
         "bold": '700',
+        "semi-med": '600',
         "medium": '500',
-        "normal": '400'
+        "normal": '400',
       },
     },
   },

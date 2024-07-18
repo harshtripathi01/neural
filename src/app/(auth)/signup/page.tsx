@@ -1,8 +1,11 @@
+import Signup from '@/component/authentication/Signup/Signup'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+      <Signup />
+    </>
   )
 }
 
