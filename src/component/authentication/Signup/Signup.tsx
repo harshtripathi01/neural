@@ -31,8 +31,7 @@ const Signup = () => {
                 <div className='w-full flex justify-center items-center'>
                     <div className='flex flex-col gap-6 justify-center max-w-[480px] w-full h-full p-2'>
                         <div className='flex flex-col gap-2'>
-                            <p className='text-[24px] font-bold'>Get started absolutely free</p>
-                            <p className='text-[16px] font-normal text-[#637381]'>Free forever</p>
+                            <p className='text-[24px] font-bold'>Get started</p>
                         </div>
                         <div className='flex justify-center gap-2'>
                             <div className='w-full h-[48px] border flex justify-center items-center rounded-lg cursor-pointer'>
@@ -78,7 +77,9 @@ const Signup = () => {
                                 />
                             </FormControl>
                             <button className='w-full bg-[#3C23B5] text-white py-3 px-5 rounded'>Register</button>
-                            <p className='text-[#637381] font-normal text-[14px]'>By signing up, I agree to Neural <span className='text-[#212B36] text-[14px] font-semi-med'>Terms of Service</span>and <span className='text-[#212B36] text-[14px] font-semi-med'>Privacy Policy.</span></p> 
+                            <p className='text-[#637381] font-normal text-[14px]'>
+                                By signing up, I agree to Neural <span className='text-[#212B36] text-[14px] font-semi-med'>Terms of Service</span> and <span className='text-[#212B36] text-[14px] font-semi-med'>Privacy Policy.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
