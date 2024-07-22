@@ -6,3 +6,6 @@ export const ICON_HEIGHT = "24"
 
 export const ARROW_WIDTH = "18"
 export const ARROW_HEIGHT = "18"
+
+export const FOOTER_SOCIAL_WIDTH = "20"
+export const FOOTER_SOCIAL_HEIGHT = "20"
