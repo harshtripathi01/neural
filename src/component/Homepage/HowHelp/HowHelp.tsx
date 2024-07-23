@@ -4,16 +4,17 @@ import React from 'react'
 
 const HowHelp = () => {
     return (
-        <div className='px-[195px] py-[74px]'>
-            <div className='flex flex-col justify-center items-center'>
+        <div className='px-[195px] w-full'>
+            <hr />
+            <div className='flex flex-col justify-center items-center mt-[74px]'>
                 <p className='font-bold text-[12px] text-[#637381]'>FOR BUSINESS</p>
                 <p className='font-bold text-[40px] text-[#3C23B5]'>How neural helps your business? </p>
             </div>
-            <div className='mt-[44px] flex justify-start items-center gap-6'>
-                <div className='max-w-[451px] h-auto'>
-                    <Image src={HOMEPAGE_HOW_WORKS} width={451} height={451} alt='Bussines' />
+            <div className='flex justify-evenly items-center'>
+                <div className='max-w-[450px] w-full h-auto'>
+                    <Image src={HOMEPAGE_HOW_WORKS} width={450} height={451} alt='Bussines' />
                 </div>
-                <div className='h-[200px]'>
+                <div className='h-[200px] max-w-[450px] w-full flex justify-start'>
                     <ul className='list-disc'>
                         <li className='text-[#212832] font-bold text-[25px]'>High-quality insights</li>
                         <li className='text-[#212832] font-bold text-[25px]'>Real-time access</li>

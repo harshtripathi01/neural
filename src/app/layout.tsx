@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { nunito } from "./font";
 import Footer from "@/component/Footer/Footer";
+import Header from "@/component/Header/Header";
 
 export const metadata: Metadata = {
   title: "Neural",
@@ -12,7 +13,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en" className={nunito.className}>
       <body>
-        {children}
+        <Header />
+        <main className="">
+          <div>
+            {children}
+          </div>
+        </main>
         <Footer />
       </body>
     </html>
