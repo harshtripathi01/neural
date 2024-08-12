@@ -13,6 +13,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Checkbox } from '@mui/material';
+import Link from 'next/link';
 
 const Signup = () => {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -56,7 +57,7 @@ const Signup = () => {
                             </div>
                             <TextField id="outlined-basic2" className='w-full' label="Email address" variant="outlined" />
                             <TextField id="outlined-basic3" className='w-full' label="Invitation Code" variant="outlined" />
-                            <FormControl sx={{ width: '25ch' }} className='w-full' variant="outlined">
+                            <FormControl className='w-full' variant="outlined">
                                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                                 <OutlinedInput
                                     id="outlined-adornment-password"
@@ -76,9 +77,11 @@ const Signup = () => {
                                     label="Password"
                                 />
                             </FormControl>
-                            <button className='w-full bg-[#3C23B5] text-white py-3 px-5 rounded'>Register</button>
-                            <p className='text-[#637381] font-normal text-[14px]'>
+                            <Link href='/login' className='w-full bg-[#3C23B5] text-white py-3 px-5 rounded text-center'>Register</Link>
+                            <p className='text-[#637381] font-normal text-[14px] ml-4'>
                                 By signing up, I agree to Neural <span className='text-[#212B36] text-[14px] font-semi-med'>Terms of Service</span> and <span className='text-[#212B36] text-[14px] font-semi-med'>Privacy Policy.</span>
+                            </p>
+                            <p className='text-[#212B36] text-[14px] font-semi-med text-end'>Already have an account ? <Link href='/login' className='text-[#3C23B5] text-[14px] font-semi-med'>Login</Link>
                             </p>
                         </div>
                     </div>

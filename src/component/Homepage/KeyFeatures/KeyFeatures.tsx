@@ -31,7 +31,7 @@ const KeyFeatures = () => {
 
 
   return (
-    <div className='w-full h-full bg-[#3C23B5CC] px-[195px] pb-[191px]'>
+    <div className='w-full h-full bg-[#3C23B5CC] px-[195px] pb-[191px] mt-10'>
       <p className='text-[#FCFCFC] text-center font-bold text-[40px] pt-[104px] pb-[69px]'>Key Features</p>
       <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
         {

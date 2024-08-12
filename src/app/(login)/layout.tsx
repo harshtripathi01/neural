@@ -14,7 +14,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <body>
                 <main className="">
                     <div className="grid grid-cols-12 h-screen">
-                        <div className="col-span-2 border-r-[3px] p-3"><Sidebar /></div>
+                        <div className="col-span-2 border border-r-[3px] p-3"><Sidebar /></div>
                         <div className="col-span-10">
                             <div className='w-full sticky top-0 bg-white z-50 border-b-[3px]'>
                             <LoginHeader />

@@ -1,0 +1,20 @@
+/* components/HtmlEditor.css */
+.custom-quill {
+    background-color:#ffffff ;
+    width: 665px;
+    height: 150px; /* Adjust the height as needed */
+    border: 2px solid #E8EFFF; /* Optional: Add a border */
+    border-radius: 15px; /* Adjust the border radius as needed */
+    overflow: hidden; /* Prevents overflow if the content exceeds the border radius */
+  }
+  
+  .custom-quill .ql-toolbar {
+    border-top-left-radius: 8px; /* Match the border radius */
+    border-top-right-radius: 8px; /* Match the border radius */
+  }
+  
+  .custom-quill .ql-container {
+    border-bottom-left-radius: 8px; /* Match the border radius */
+    border-bottom-right-radius: 8px; /* Match the border radius */
+  }
+  

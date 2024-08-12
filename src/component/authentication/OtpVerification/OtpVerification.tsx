@@ -5,6 +5,7 @@ import MaximizeIcon from '@mui/icons-material/Maximize';
 import Image from 'next/image';
 import { LEFT_URL } from '@/component/utils/constant';
 import { ARROW_HEIGHT, ARROW_WIDTH } from '@/component/utils/width';
+import Link from 'next/link';
 
 const inputStyle: any = {
     width: "50px",
@@ -41,7 +42,7 @@ const OtpVerification = () => {
             <div className='max-w-[480px]'>
                 <div className='flex items-center'>
                     <Image src={LEFT_URL} width={ARROW_WIDTH} height={ARROW_HEIGHT} alt='left' />
-                    <span className='text-[#3C23B5] font-bold text-[13px]'>back</span>
+                    <Link href='/reset-password' className='text-[#3C23B5] font-bold text-[13px]'>back</Link>
                 </div>
                 <div className='flex flex-col gap-10'>
                     <div className='flex flex-col gap-4'>
@@ -58,8 +59,8 @@ const OtpVerification = () => {
                             containerStyle={containerStyle}
                             inputStyle={inputStyle}
                         />
-                         <button className='w-full bg-[#3C23B5] mt-6 text-white py-3 px-5 rounded'>Verify</button>
-                         <p className='text-[#212B36] text-[14px] font-normal cursor-pointer'>Don&apos;t have a code? <span className='text-[#3C23B5] font-bold text-[14px]'>Resend code</span></p>
+                         <Link href='/change-password' className='w-full bg-[#3C23B5] mt-6 text-center text-white py-3 px-5 rounded'>Verify</Link>
+                         <p className='text-[#212B36] text-[14px] text-center font-normal cursor-pointer'>Don&apos;t have a code? <span className='text-[#3C23B5] font-bold text-[14px]'>Resend code</span></p>
                     </div>
                 </div>
             </div>

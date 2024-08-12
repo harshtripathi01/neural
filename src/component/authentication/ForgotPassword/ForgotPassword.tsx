@@ -1,4 +1,5 @@
 import { TextField } from '@mui/material'
+import Link from 'next/link'
 import React from 'react'
 
 const ForgotPassword = () => {
@@ -11,8 +12,8 @@ const ForgotPassword = () => {
                 </div>
                 <div className='flex flex-col'>
                     <TextField id="outlined-basic" className='w-full' label="Email address" variant="outlined" />
-                    <button className='w-full bg-[#3C23B5] mt-6 text-white py-3 px-5 rounded'>Reset Password</button>
-                    <button className='w-full mt-2 text-[#3C23B5] bg-white py-3 px-5 rounded font-bold'>Back</button>
+                    <Link href='/otp-verification' className='w-full bg-[#3C23B5] mt-6 text-center text-white py-3 px-5 rounded'>Reset Password</Link>
+                    <Link href='/login' className='w-full mt-2 text-[#3C23B5] text-center bg-white py-3 px-5 rounded font-bold'>Back</Link>
                 </div>
             </div>
             

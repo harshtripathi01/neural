@@ -12,13 +12,16 @@ const HowHelp = () => {
             </div>
             <div className='flex justify-evenly items-center'>
                 <div className='max-w-[450px] w-full h-auto'>
-                    <Image src={HOMEPAGE_HOW_WORKS} width={450} height={451} alt='Bussines' />
+                    <Image src={HOMEPAGE_HOW_WORKS} width={451} height={451} alt='Bussines' />
                 </div>
-                <div className='h-[200px] max-w-[450px] w-full flex justify-start'>
+                <div className='h-[310px] max-w-[633px] w-full flex justify-start'>
                     <ul className='list-disc'>
-                        <li className='text-[#212832] font-bold text-[25px]'>High-quality insights</li>
-                        <li className='text-[#212832] font-bold text-[25px]'>Real-time access</li>
-                        <li className='text-[#212832] font-bold text-[25px]'>Cost-effective solutions</li>
+                        <li className='text-[#212832] font-bold text-[25px]'>High-quality insights:<span className='text-[#212832] font-normal text-[25px]'>Use our RAG based GenAI, NEURON, to get quick on-demand insights from highly vetted experts
+                        </span></li>
+                        <li className='text-[#212832] font-bold text-[25px]'>Real-time access:<span className='text-[#212832] font-normal text-[25px]'>Our professional network model allows experts to answer questions as they get it
+                        </span></li>
+                        <li className='text-[#212832] font-bold text-[25px]'>Cost-effective solutions:<span className='text-[#212832] font-normal text-[25px]'>Our clients save 50% on their research spend by eliminating low-quality interactions and content
+                        </span></li>
                     </ul>
                 </div>
             </div>

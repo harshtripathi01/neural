@@ -14,7 +14,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { Checkbox } from '@mui/material';
+import { Checkbox} from '@mui/material';
+import Link from 'next/link'
 
 const Login = () => {
 
@@ -57,7 +58,7 @@ const Login = () => {
 
               <TextField id="outlined-basic" className='w-full' label="Email address" variant="outlined" />
 
-              <FormControl sx={{ width: '25ch' }} className='w-full' variant="outlined">
+              <FormControl className='w-full' variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-password"
@@ -80,10 +81,12 @@ const Login = () => {
 
               <div className='flex items-center justify-between'>
                 <FormControlLabel control={<Checkbox defaultChecked />} label="Remember me" />
-                <p className='text-[#181E4B] font-bold text-[14px] cursor-pointer'>Forgot password?</p>
+                <Link href='/reset-password' className='text-[#181E4B] font-bold text-[14px] cursor-pointer'>Forgot password?</Link>
               </div>
 
               <button className='w-full bg-[#3C23B5] text-white py-3 px-5 rounded'>Login</button>
+              <p className='text-[#212B36] text-[14px] font-semi-med text-end'>Don't have an account ? <Link href='/signup' className='text-[#3C23B5] text-[14px] font-semi-med'>Get Started</Link>
+              </p>
 
             </div>
           </div>
