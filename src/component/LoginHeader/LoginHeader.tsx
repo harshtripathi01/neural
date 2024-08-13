@@ -8,6 +8,15 @@ import Link from 'next/link';
 import { usePathname} from 'next/navigation';
 
 const LoginHeader = () => {
+
+    let name = null;
+    if (sessionStorage.getItem('userData')) {
+        const userData = JSON.parse(sessionStorage.getItem('userData')!);
+        if (userData && userData.data) {
+            name = userData.data.firstName + ' ' + userData.data.lastName;
+        }
+    }
+
     const pathname = usePathname();
     return (
         <div className="h-20 flex justify-end items-center px-6 bg-white text-[#000000]">
@@ -34,7 +43,7 @@ const LoginHeader = () => {
             </button>
             
             <div className="flex items-center space-x-2 cursor-pointer text-[14px] font-bold">
-               <Link href="/profile"><span>Jenie James</span></Link>
+               <Link href="/profile"><span>{name}</span></Link>
                <Link href="/profile"> <img
                     src={PROFILE}
                     alt="Profile"

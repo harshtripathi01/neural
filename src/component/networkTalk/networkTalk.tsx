@@ -32,7 +32,7 @@ export default function NetworkTalk() {
       <h1 className="text-2xl font-bold">What’s your network talking about</h1>
     </div>
     {[1,2,3,4].map((item) => (
-       <Card className="w-[665px] h-auto  p-6 shadow-sm rounded mb-8">
+       <Card key={item} className="w-[665px] h-auto  p-6 shadow-sm rounded mb-8">
        <div className="flex items-center p-4">
        <img
                     src={PICTURE}

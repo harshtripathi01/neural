@@ -31,10 +31,10 @@ function ChevronUpIcon(props) {
     </svg>
   )
 }
-const ClientQuestion = () => {
-  const [questionType, setQuestionType] = useState('multiple');
+const ClientQuestion = ({postQustion}) => {
+  const [questionType, setQuestionType] = useState('multiple-choice');
   const [editingIndex, setEditingIndex] = useState(null);
-
+const[qusteion, setQustion] = useState('')
  
   const [optionLabels, setOptionLabels] = useState([
     'Option1',
@@ -58,8 +58,15 @@ const ClientQuestion = () => {
   };
 
   const handleQuestionSubmit = () => {
-   console.log("Question submitted:", questionType, optionLabels);
-  // Reset option labels
+
+   let  req = {
+      answerType:questionType,
+      question:qusteion,
+      options: questionType === 'multiple-choice' ? optionLabels : undefined
+
+    }
+    postQustion(req);
+ 
   setEditingIndex(null); // Exit edit mode
   };
 
@@ -79,19 +86,19 @@ const ClientQuestion = () => {
       <Card className="w-auto h-auto p-6 shadow-lg border-l-2 border-r-2 border-b-4 border-[#c6c6c6] border-t-0 mt-10" >
         <CardContent className="space-y-4">
           <div className="flex items-center space-x-6">
-            <Input placeholder="Enter your question here." className="w-[374px] h-auto py-4 text-[14px] font-semibold" />
+            <Input onChange={(e) => setQustion(e.target.value)} placeholder="Enter your question here." className="w-[374px] h-auto py-4 text-[14px] font-semibold" />
 
             <Select onValueChange={handleSelectChange} value={questionType}>
             <SelectTrigger className="w-[194px] h-auto py-4 text-[14px]">
               <SelectValue placeholder="Multiple choice" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="multiple">Multiple choice</SelectItem>
-              <SelectItem value="single">Text</SelectItem>
+              <SelectItem value="multiple-choice">Multiple choice</SelectItem>
+              <SelectItem value="text">Text</SelectItem>
             </SelectContent>
           </Select>
           </div>
-          {questionType === 'multiple' && (
+          {questionType === 'multiple-choice' && (
          <RadioGroup>
          <div className="space-y-2">
               {optionLabels.map((label, index) => (
@@ -122,7 +129,7 @@ const ClientQuestion = () => {
           )}
 
 
-{questionType === 'single' && (
+{questionType === 'text' && (
  <div className="flex items-center space-x-6">
  <input 
    type="text" 

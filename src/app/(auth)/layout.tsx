@@ -10,7 +10,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     return (
         <html lang="en">
             <body>
-                <AuthHeader />
+                {/* <AuthHeader /> */}
                 <main className="">
                     <div>
                         {children}

@@ -13,4 +13,6 @@ export const X_FOOTER_URL = '/images/socialmedia/x.svg'
 export const PROFILE ='/images/homepage/profile.svg'
 export const PICTURE ='/images/homepage/picture.svg'
 export const PROFILE_EXPERIENCE ='/images/homepage/profileexperience.svg'
+export const BASE_URL = 'http://localhost:8500';
+export const TOKEN = 'your_access_token';
 

@@ -91,7 +91,7 @@ export default function ExpertTalk() {
                     </div>
 
     {[1,2,3,4].map((item) => (
-        <Card className="w-[665px] h-auto shadow-sm rounded-[15px] mb-8">
+        <Card key={item} className="w-[665px] h-auto shadow-sm rounded-[15px] mb-8">
         <div className="flex items-center p-4">
         <img
                     src={PICTURE}
