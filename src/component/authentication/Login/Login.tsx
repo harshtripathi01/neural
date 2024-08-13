@@ -16,22 +16,17 @@ import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Checkbox} from '@mui/material';
 import Link from 'next/link'
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 
 const Login = () => {
 
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const [role, setRole] = React.useState('');
 
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
-  const handleRoleChange = (event) => {
-    setRole(event.target.value);
-};
+
   return (
     <section className='w-full h-full'>
 
@@ -62,19 +57,7 @@ const Login = () => {
             <div className='flex flex-col gap-6'>
 
               <TextField id="outlined-basic" className='w-full' label="Email address" variant="outlined" />
-              <FormControl variant="outlined" className='w-full'>
-                                <InputLabel id="role-select-label">Select Role</InputLabel>
-                                <Select
-                                    labelId="role-select-label"
-                                    value={role}
-                                    onChange={handleRoleChange}
-                                    label="Select Role"
-                                >
-                                    <MenuItem value="" disabled>Select Role</MenuItem>
-                                    <MenuItem value="client">Client</MenuItem>
-                                    <MenuItem value="expert">Expert</MenuItem>
-                                </Select>
-                            </FormControl>
+
               <FormControl className='w-full' variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput

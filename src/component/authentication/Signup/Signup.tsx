@@ -19,18 +19,13 @@ import Link from 'next/link';
 
 const Signup = () => {
     const [showPassword, setShowPassword] = React.useState(false);
-    const [role, setRole] = React.useState('');
-
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
 
-    const handleRoleChange = (event) => {
-        setRole(event.target.value);
-    };
-
+   
     return (
         <section className='w-full h-full'>
             <div className='w-full h-fit flex flex-col items-center justify-center mt-8'>
@@ -63,20 +58,6 @@ const Signup = () => {
                             <TextField id="outlined-basic2" className='w-full' label="Email address" variant="outlined" />
                             <TextField id="outlined-basic3" className='w-full' label="Invitation Code" variant="outlined" />
                             
-                            <FormControl variant="outlined" className='w-full'>
-                                <InputLabel id="role-select-label">Select Role</InputLabel>
-                                <Select
-                                    labelId="role-select-label"
-                                    value={role}
-                                    onChange={handleRoleChange}
-                                    label="Select Role"
-                                >
-                                    <MenuItem value="" disabled>Select Role</MenuItem>
-                                    <MenuItem value="client">Client</MenuItem>
-                                    <MenuItem value="expert">Expert</MenuItem>
-                                </Select>
-                            </FormControl>
-
                             <FormControl className='w-full' variant="outlined">
                                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                                 <OutlinedInput
