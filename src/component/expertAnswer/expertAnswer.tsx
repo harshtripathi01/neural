@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
+import HtmlEditor from '@/component/htmlEditor';
+import dynamic from 'next/dynamic';
+import '../expertTalk/expertTalk.css';
 
-
-
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import 'react-quill/dist/quill.snow.css';
 
 function ChevronUpIcon(props: any) {
   return (
@@ -27,6 +30,9 @@ function ChevronUpIcon(props: any) {
   )
 }
 const ExpertAnswer = () => {
+
+const [perspective,setPerspective] = useState('');
+  const [showEditor, setShowEditor] = useState(false);
   const [questionType, setQuestionType] = useState('multiple');
   const [editingIndex, setEditingIndex] = useState(null);
   const [optionLabels, setOptionLabels] = useState([
@@ -35,6 +41,37 @@ const ExpertAnswer = () => {
     'Option3',
     'Option4',
   ]);
+
+  HtmlEditor.modules = {
+    toolbar: [
+      [{ header: [1, 2, false] }],
+      ["bold", "italic", "underline"],
+      ["link", "image"],
+      ["clean"], // Remove formatting button
+    ],
+  };
+  
+  // Quill formats to be included in the editor
+  HtmlEditor.formats = ["header", "bold", "italic", "underline", "link", "image"];
+
+  const toggleEditor = () => {
+    setShowEditor(!showEditor);
+  };
+
+  const closeEditor = () => {
+    setShowEditor(!showEditor);
+  };
+  const handlePerspectiveChange = (content) => {
+    setPerspective(content);
+  };
+
+  const handlePerspectiveSubmit = () => {
+    // Handle comment submission logic here
+    console.log("Comment submitted:", perspective);
+    setPerspective(''); // Clear the comment after submission
+    setShowEditor(false); // Close the editor
+  };
+
 
 
   return (
@@ -82,9 +119,29 @@ const ExpertAnswer = () => {
             </div>
           </RadioGroup>
           <div className="flex justify-end">
-            <Button variant="link" className="text-[#3C23B5] text-[16px] font-bold">
-              Ask Perspective
+            <Button variant="link" className="text-[#3C23B5] text-[16px] font-bold" onClick={toggleEditor}>
+             {showEditor ? '' : ' Add Perspective'}
             </Button>
+
+            {showEditor && (
+          <div className="ml-4">
+          <ReactQuill
+            value={perspective}
+            onChange={handlePerspectiveChange}
+            modules={HtmlEditor.modules}
+            formats={HtmlEditor.formats}
+            placeholder="Write your comment here..."
+             className="expert-quill"
+          />
+          <div className="flex justify-end gap-3 mt-4">
+          <button className='py-2 text-[#3C23B5] rounded-full font-bold text-[16px] ' onClick={closeEditor}>Cancel</button>
+            <button className='bg-[#3C23B5] px-12 py-2 text-white rounded-[50px] text-[16px] font-bold' onClick={handlePerspectiveSubmit}>
+              Add
+            </button>
+            
+          </div>
+        </div>
+        )}
           </div>
         </CardContent>
       </Card>

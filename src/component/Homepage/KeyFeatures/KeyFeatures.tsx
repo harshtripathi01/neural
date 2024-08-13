@@ -12,8 +12,8 @@ const KeyFeatures = () => {
       "description": "Find relevant experts and content with powerful search and filter options."
     },
     {
-      "title": "Content Management",
-      "description": "Easily manage and update your knowledge contributions."
+      "title": "Neuron",
+      "description": "Find intelligent answers to difficult questions using our RAG based Gen-AI system NEURON."
     },
     {
       "title": "Networking",

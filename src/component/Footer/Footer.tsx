@@ -6,13 +6,29 @@ import { FOOTER_SOCIAL_HEIGHT, FOOTER_SOCIAL_WIDTH, LOGO_HEIGHT, LOGO_WIDTH } fr
 const Footer = () => {
     return (
         <section className='px-[145px] py-[101px]'>
-            <div className='grid grid-cols-2'>
+            <div className='flex justify-between items-center'>
                 <div>
-                    <div className='flex gap-4 w-full h-auto'>
-                        <Image src={LOGO_URL} width={LOGO_WIDTH} height={LOGO_HEIGHT} alt='Logo' />
-                        <p className='text-[#3C23B5] font-bold text-[36px]'>neural</p>
+                <p className='text-[#212B36] font-normal text-[14px] '>© 2025. All rights reserved</p>
+                </div>
+                <div className='col-span-2 flex items-center gap-2'>
+
+<div className='w-fit h-auto'>
+    <Image src={LOGO_URL} width={LOGO_WIDTH} height={LOGO_HEIGHT} alt='Logo' />
+</div>
+
+<div className='text-[32px] font-bold text-[#3C23B5]'>
+    neural
+</div>
+</div>
+
+                    <div className=''>
+                        <p className='text-[#212B36] font-bold text-[12px]'>Contact- <span className='text-[#212B36] font-normal  text-[12px]'>support@neural.com</span></p>
+                        {/* <div className='text-[#212B36] font-normal text-[14px] flex flex-col gap-3'>
+                            <p>support@neural.com</p>
+                            <p>Los Angeles, 359  Hidden Valley Road</p>
+                        </div> */}
                     </div>
-                    <div className='flex gap-6 mt-[18px]'>
+                    {/* <div className='flex gap-6 mt-[18px]'>
                         <div className='h-auto'>
                             <Image width={FOOTER_SOCIAL_WIDTH} height={FOOTER_SOCIAL_HEIGHT} src={FACEBOOK_URL} alt='Social Media Url' />
                         </div>
@@ -25,9 +41,8 @@ const Footer = () => {
                         <div className='h-auto'>
                             <Image width={FOOTER_SOCIAL_WIDTH} height={FOOTER_SOCIAL_HEIGHT} src={X_FOOTER_URL} alt='Social Media Url' />
                         </div>
-                    </div>
-                    <p className='text-[#212B36] font-normal text-[14px] mt-[80px]'>© 2025. All rights reserved</p>
-                </div>
+                    </div> 
+                    
                 <div className='flex gap-20 mt-8'>
                     <div className='flex flex-col gap-6'>
                         <p className='text-[#212B36] font-bold text-[12px]'>Neural</p>
@@ -52,7 +67,7 @@ const Footer = () => {
                         </div>
                     </div>
                     
-                </div>
+                </div>*/}
             </div>
         </section>
     )

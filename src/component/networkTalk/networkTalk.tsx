@@ -3,6 +3,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import {  PICTURE } from '@/component/utils/constant'
 
 
 
@@ -33,10 +34,12 @@ export default function NetworkTalk() {
     {[1,2,3,4].map((item) => (
        <Card className="w-[665px] h-auto  p-6 shadow-sm rounded mb-8">
        <div className="flex items-center p-4">
-         <Avatar>
-           <AvatarImage src="/placeholder-user.jpg" alt="James Heathfield" />
-           <AvatarFallback>JH</AvatarFallback>
-         </Avatar>
+       <img
+                    src={PICTURE}
+                    alt="Profile"
+                    className="w-[55px] h-[55px] rounded-full"
+                  
+                />
          <div className="ml-4">
            <div className="font-bold text-[20px]">James Heathfield</div>
            <div className="text-muted-foreground text-[14px]">CTO / IBM</div>

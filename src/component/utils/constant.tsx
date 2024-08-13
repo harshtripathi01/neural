@@ -11,5 +11,6 @@ export const INSTAGRAM_URL = '/images/socialmedia/instagram.svg'
 export const LINKDIEN_FOOTER_URL = '/images/socialmedia/linkdien.svg'
 export const X_FOOTER_URL = '/images/socialmedia/x.svg'
 export const PROFILE ='/images/homepage/profile.svg'
+export const PICTURE ='/images/homepage/picture.svg'
 export const PROFILE_EXPERIENCE ='/images/homepage/profileexperience.svg'
 

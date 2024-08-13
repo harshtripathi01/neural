@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import HtmlEditor from '@/component/htmlEditor';
 import { useState } from "react";
 import './expertTalk.css';
+import {  PICTURE } from '@/component/utils/constant'
 
 import dynamic from 'next/dynamic';
 
@@ -92,10 +93,12 @@ export default function ExpertTalk() {
     {[1,2,3,4].map((item) => (
         <Card className="w-[665px] h-auto shadow-sm rounded-[15px] mb-8">
         <div className="flex items-center p-4">
-          <Avatar>
-            <AvatarImage src="/placeholder-user.jpg" alt="James Heathfield" />
-            <AvatarFallback>JH</AvatarFallback>
-          </Avatar>
+        <img
+                    src={PICTURE}
+                    alt="Profile"
+                    className="w-[55px] h-[55px] rounded-full"
+                  
+                />
           <div className="ml-4">
             <div className="font-bold text-[20px]">James Heathfield</div>
             <div className="text-muted-foreground text-[14px]">CTO / IBM</div>
