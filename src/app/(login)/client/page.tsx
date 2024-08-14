@@ -5,6 +5,7 @@ import Networktalk from '@/component/networkTalk/networkTalk'
 
 
 import { postQuestion } from '@/component/utils/api'
+import { enqueueSnackbar } from 'notistack';
 
 
 
@@ -15,14 +16,11 @@ const page = () => {
 
   const handlePostQuestion = async (data) => {
     try {
-      let xxx:any =  sessionStorage.getItem('userData')
-      if(!!xxx){
-        xxx = JSON.parse(xxx)
-      }
-      const response = await postQuestion({...data,clientId:xxx?.data?._id,image:''});
+    
+      const response = await postQuestion({...data,image:''});
       if (response.success) {
-        // Handle successful response
-        console.log(response.data);
+        enqueueSnackbar(response.message, { variant: 'success' })
+
       } else {
         // Handle error response
         console.log(response.error);

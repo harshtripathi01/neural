@@ -28,7 +28,7 @@ const Sidebar = () => {
           </li>
           <li className='mb-2 hover:bg-[#B4BAE5] hover:font-bold hover:border-e-4 border-[#1826D8] w-full py-2 flex items-center justify-start px-6'>
             <NetworkCheckIcon className='mr-2' />
-            <Link href='/network' className='text-black'>Network</Link>
+            <Link href='/mynetwork' className='text-black'>Network</Link>
           </li>
           <li className='mb-2 hover:bg-[#B4BAE5] hover:font-bold hover:border-e-4 border-[#1826D8] w-full py-2 flex items-center justify-start px-6'>
             <MonetizationOnIcon className='mr-2' />

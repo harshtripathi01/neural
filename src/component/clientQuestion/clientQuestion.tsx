@@ -62,7 +62,7 @@ const[qusteion, setQustion] = useState('')
    let  req = {
       answerType:questionType,
       question:qusteion,
-      options: questionType === 'multiple-choice' ? optionLabels : undefined
+      options: questionType === 'multiple-choice' ? optionLabels : undefined,
 
     }
     postQustion(req);
