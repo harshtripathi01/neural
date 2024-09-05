@@ -32,10 +32,12 @@ const[users,setUsers] = React.useState([])
               // Handle error response
               console.log(response.error);
             }
+            
             const anotherRespont = await getAllUser();
     
-            if (anotherRespont?.statuscode == 200) {
-              enqueueSnackbar(anotherRespont.message, { variant: 'success' })
+            if (!!anotherRespont) {
+              
+              // enqueueSnackbar(anotherRespont.message, { variant: 'success' })
               setUsers(anotherRespont.data)
             }
 
@@ -57,8 +59,8 @@ const[users,setUsers] = React.useState([])
 
         const anotherRespont = await getAllAdmin();
     
-        if (anotherRespont?.statuscode == 200) {
-          enqueueSnackbar(anotherRespont.message, { variant: 'success' })
+        if (!!anotherRespont) {
+          // enqueueSnackbar(anotherRespont.message, { variant: 'success' })
           setUsers(anotherRespont.data)
         }
       }

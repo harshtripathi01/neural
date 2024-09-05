@@ -24,7 +24,7 @@ const Sidebar = () => {
         <div>
           <li className='mb-2 hover:bg-[#B4BAE5] hover:font-bold hover:border-e-4 border-[#1826D8] w-full py-2 flex items-center justify-start px-6'>
             <DashboardIcon className='mr-2' />
-            <a href='#' className='text-black'>Dashboard</a>
+            <Link href='/' className='text-black'>Dashboard</Link>
           </li>
           <li className='mb-2 hover:bg-[#B4BAE5] hover:font-bold hover:border-e-4 border-[#1826D8] w-full py-2 flex items-center justify-start px-6'>
             <NetworkCheckIcon className='mr-2' />

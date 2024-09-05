@@ -7,17 +7,15 @@ import { Button } from '@/components/ui/button';
 
 
 const Chats = ({chats,users,addchat,sendMessage,getAllmsgs}) => {
-  const conversations = [
-    { id: 1, name: 'Xian Zhou', lastMessage: 'How To Boost...', time: '3 days' },
-    { id: 2, name: 'Valdemar Forsberg', lastMessage: 'How To Boost Traffic...', time: '1 hours' },
-   ...chats
-  ];
+  
   const [isOpen, setIsOpen] = React.useState(false);
   const [newUser, setNewUser] = React.useState('');
   const [chat, setChat] = React.useState(null as any);
+  const [chatRefresh, setRefreshChat] = React.useState(chats);
   const handleOk =async () => {
    const res = await addchat(newUser)
    setChat(res)
+   setRefreshChat([...chatRefresh,res])
     setIsOpen(false);
   };
   const handleCancel = () => {

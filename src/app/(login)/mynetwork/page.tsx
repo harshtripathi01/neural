@@ -25,12 +25,12 @@ const page = () => {
         let data:any = sessionStorage.getItem('userData');
         if (data) {
           data = JSON.parse(data);
-          if (data && !!data.data?.adminId) {
+          if (data && !!data.data?.adminId ) {
            
-            const anotherRespont = await getAllUser();
+            const anotherRespont = await getAllAdmin();
     
-            if (anotherRespont?.statuscode == 200) {
-              enqueueSnackbar(anotherRespont.message, { variant: 'success' })
+            if (!!anotherRespont) {
+              // enqueueSnackbar(anotherRespont.message, { variant: 'success' })
               setUsers(anotherRespont.data)
             }
   
@@ -40,10 +40,10 @@ const page = () => {
       }else{
        
   
-        const anotherRespont = await getAllAdmin();
+        const anotherRespont = await getAllUser();
     
-        if (anotherRespont?.statuscode == 200) {
-          enqueueSnackbar(anotherRespont.message, { variant: 'success' })
+        if (!!anotherRespont) {
+          // enqueueSnackbar(anotherRespont.message, { variant: 'success' })
           setUsers(anotherRespont.data)
         }
       }
