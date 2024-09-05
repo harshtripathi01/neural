@@ -1,19 +1,38 @@
 import React from 'react';
-import { Search, ArrowLeft, Edit,Send } from 'lucide-react';
-import { PROFILE } from '@/component/utils/constant'
+import { Search, ArrowLeft, Edit,Send, X } from 'lucide-react';
+import { PROFILE } from '@/component/utils/constant';
+import ChatWindow from "./chatWindow";
+import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { Button } from '@/components/ui/button';
 
-const Chats = () => {
+
+const Chats = ({chats,users,addchat,sendMessage,getAllmsgs}) => {
   const conversations = [
     { id: 1, name: 'Xian Zhou', lastMessage: 'How To Boost...', time: '3 days' },
     { id: 2, name: 'Valdemar Forsberg', lastMessage: 'How To Boost Traffic...', time: '1 hours' },
-    { id: 3, name: 'Lewis Simmons', lastMessage: 'Internet Banner...', time: '10 hours' },
-    { id: 4, name: 'Mo Chun', lastMessage: 'Free Real Estate...', time: '3 days' },
-    { id: 5, name: 'Mgbankwo Orjee', lastMessage: '6 Powerful Tips To...', time: '10 hours' },
+   ...chats
   ];
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [newUser, setNewUser] = React.useState('');
+  const [chat, setChat] = React.useState(null as any);
+  const handleOk =async () => {
+   const res = await addchat(newUser)
+   setChat(res)
+    setIsOpen(false);
+  };
+  const handleCancel = () => {
+    setIsOpen(false);
+  };
+
+  const handleChange = (event) => {
+    setNewUser(event.target.value);
+  };
+
 
   return (
 
     <div>
+
         <div className="flex items-start justify-start w-full max-w-4xl m-12 mt-8">
       <h1 className="text-2xl font-bold">Messaging</h1>
     </div>
@@ -29,7 +48,41 @@ const Chats = () => {
                 />
           <div className="flex space-x-4 text-[#637381] text-[14px]">
             <button><ArrowLeft /></button>
-            <button><Edit /></button>
+            <button onClick={() => {
+              setIsOpen(true);
+            }}><Edit /></button>
+            {isOpen && (
+              <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+                <div className="bg-white p-4 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-lg font-bold">New Chat</h2>
+                    <button className="text-gray-500" onClick={handleCancel}>
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <div className="mt-4">
+                    <FormControl fullWidth>
+      <InputLabel id="demo-simple-select-label">Users</InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={newUser}
+        label="Age"
+        onChange={handleChange}
+      >
+          {users.map(user => (
+        <MenuItem key={user._id} value={user._id}>{user.firstName+' '+user.lastName}</MenuItem>
+      ))}
+      </Select>
+    </FormControl>
+                  </div>
+                  <div className="mt-4 flex items-center justify-end">
+                    <Button variant="outline" onClick={handleCancel}>Cancel</Button>
+                    <Button className="ml-2" onClick={() => handleOk()}>Ok</Button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="p-2">
@@ -43,63 +96,26 @@ const Chats = () => {
           </div>
         </div>
         <div className="overflow-y-auto">
-          {conversations.map((convo) => (
-            <div key={convo.id} className="flex items-center p-3 hover:bg-gray-100 cursor-pointer">
+          {chats.map((convo) => (
+            <div key={convo._id} className="flex items-center p-3 hover:bg-gray-100 cursor-pointer" onClick={() => setChat(convo)}>
                <img
                     src={PROFILE}
                     alt="Profile"
                     className="w-[55px] h-[55px] rounded-full"
                   
                 />
-              <div className="flex-1">
-                <h3 className="font-bold text-[14px] text-[#212B36]">{convo.name}</h3>
-                <p className="text-normal text-[14px] text-[#637381]">{convo.lastMessage}</p>
+              <div className="flex-2">
+                <h3 className="font-bold text-[14px] text-[#212B36]">{convo.users[0].firstName+' '+convo.users[0].lastName}</h3>
+                <p className="text-normal text-[14px] text-[#637381]">{convo.chatName}</p>
               </div>
-              <span className="text-normal text-[12px] text-[#919EAB]">{convo.time}</span>
+              {/* <span className="text-normal text-[12px] text-[#919EAB]">{convo.updatedAt}</span> */}
             </div>
           ))}
         </div>
       </div>
-      
+    {!!chat &&  <ChatWindow chat={chat} sendMe={sendMessage} getAllChats={getAllmsgs} />}
       {/* Right chat area */}
-      <div className="flex-1 flex flex-col ">
-        <div className="p-4 flex items-center border-b-2 ">
-        <img
-                    src={PROFILE}
-                    alt="Profile"
-                    className="w-[35px] h-[35px] rounded-full"
-                  
-                />
-          <div className='ml-4 text-[14px]'>
-            <h2 className="font-bold text-[#212B36] ">Lewis Simmons</h2>
-            <p className="text-normal text-[#637381]">Active Now</p>
-          </div>
-        </div>
-        <div className="flex-1 overflow-y-auto p-4">
-          <div className="bg-[#C8FACD] p-3 rounded-lg max-w-xs ml-auto mb-2">
-            <p>Hey John, I am looking for the best admin template. Could you please help me to find it out? 🙂</p>
-            <p className="text-right text-xs text-gray-500 mt-1">4:02 PM</p>
-          </div>
-          <div className="bg-[#F4F6F8] p-3 rounded-lg max-w-xs mb-2">
-            <p>Stack admin is the responsive admin template.</p>
-            <p className="text-right text-xs text-gray-500 mt-1">4:02 PM</p>
-          </div>
-          <div className="bg-[#C8FACD] p-3 rounded-lg max-w-xs ml-auto">
-            <p>Looks clean and fresh UI. 😃</p>
-            <p className="text-right text-xs text-gray-500 mt-1">4:02 PM</p>
-          </div>
-        </div>
-        <div className="flex items-center bg-white rounded-full w-3/4">
-            <input
-              type="text"
-              placeholder="Type a message"
-              className="flex-1 p-4 border border-[#99A7B4] rounded-lg ml-2"
-            />
-            <button className="p-4  text-[#637381] border border-[#99A7B4] rounded-full  ml-4">
-              <Send size={20} />
-            </button>
-          </div>
-      </div>
+         
     </div>
     </div>
   );
